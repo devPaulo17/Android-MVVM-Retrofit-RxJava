@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Películas</string>
+
+    <string name="error_message_loading_movies">Hubo un error.</string>
+    <string name="default_message_loading_movies">Presione el botón para cargar ùltimas pelìculas!</string>
+
+</resources>

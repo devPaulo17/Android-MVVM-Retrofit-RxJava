@@ -1,0 +1,150 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+    <import type="android.view.View" />
+
+
+    <variable
+        name="movieViewModel"
+        type="com.devPaul.pruebamerqueo.viewModel.ItemMovieViewModel"/>
+  </data>
+
+
+  <android.support.v7.widget.CardView
+      app:cardElevation="5dp"
+      android:layout_margin="@dimen/spacing_huge"
+      android:id="@+id/item_people"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="?attr/selectableItemBackground"
+      android:foreground="?android:attr/selectableItemBackground"
+      android:clickable="true"
+      android:onClick="@{movieViewModel::onItemClick}"
+      android:padding="@dimen/spacing_large">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/image_people"
+            android:layout_width="110dp"
+            android:layout_height="140dp"
+            android:layout_gravity="left"
+            android:src="@color/colorAccent"
+            tools:imageUrl="@{movieViewModel.profileThumb}" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/label_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:layout_alignTop="@+id/image_people"
+                    android:text="@{movieViewModel.title}"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    tools:text="Título"
+                    tools:ignore="RtlCompat" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="@dimen/spacing_large"
+                    android:textColor="@android:color/secondary_text_light"
+                    android:textSize="10sp"
+                    android:text="Fecha lanzamiento:"
+                    />
+
+                <TextView
+                    android:id="@+id/label_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/label_name"
+                    android:layout_below="@+id/label_name"
+                    android:layout_marginStart="@dimen/spacing_large"
+                    android:layout_marginTop="@dimen/spacing_large"
+                    android:text="@{movieViewModel.releaseDate}"
+                    android:textColor="@android:color/secondary_text_light"
+                    android:textSize="12sp"
+                    tools:text="No hay"
+                    tools:ignore="RtlCompat" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="@dimen/spacing_large"
+                    android:textColor="@android:color/secondary_text_light"
+                    android:textSize="10sp"
+                    android:text="Calificación:"
+                    />
+
+                <TextView
+                    android:id="@+id/label_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/label_name"
+                    android:layout_below="@+id/label_name"
+                    android:layout_marginStart="@dimen/spacing_large"
+                    android:layout_marginTop="@dimen/spacing_large"
+                    android:text="@{movieViewModel.score}"
+                    android:textColor="@android:color/secondary_text_light"
+                    android:textSize="12sp"
+                    tools:text="No hay"
+                    tools:ignore="RtlCompat" />
+
+
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+  </android.support.v7.widget.CardView>
+
+
+</layout>
